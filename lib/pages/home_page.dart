@@ -68,13 +68,13 @@ class _MyHomePageState extends State<MyHomePage> {
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
-        items: [
-          const BottomNavigationBarItem(
-            icon: const Icon(Icons.timer),
+        items: const [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.timer),
             label: 'Counter Test',
           ),
-          const BottomNavigationBarItem(
-            icon: const Icon(Icons.list),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.list),
             label: 'ListTile Test',
           ),
         ],
