@@ -53,6 +53,7 @@ class _MyHomePageState extends State<MyHomePage> {
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
           FloatingActionButton(
+            heroTag: 'incrementbtn',
             onPressed: Provider.of<CounterProvider>(context, listen: false)
                 .incrementCounter,
             tooltip: 'Increment',
@@ -60,6 +61,7 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
           const SizedBox(height: 10),
           FloatingActionButton(
+            heroTag: 'decrementbtn',
             onPressed: Provider.of<CounterProvider>(context, listen: false)
                 .decrementCounter,
             tooltip: 'Dencrement',
@@ -68,6 +70,13 @@ class _MyHomePageState extends State<MyHomePage> {
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
+        onTap: (index) {
+          if (index == 0) {
+            GoRouter.of(context).go('/');
+          } else {
+            GoRouter.of(context).go('/listtilepage');
+          }
+        },
         items: const [
           BottomNavigationBarItem(
             icon: Icon(Icons.timer),
